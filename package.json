@@ -16,5 +16,7 @@
     "url": "https://github.com/zzzgit/coolie/issues"
   },
   "homepage": "https://github.com/zzzgit/coolie#readme",
-  "dependencies": {}
+  "dependencies": {
+    "eslint": "^5.5.0"
+  }
 }
