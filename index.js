@@ -1,7 +1,5 @@
-let instantHandler = function (coolie) {
-	coolie.job()
-	coolie.state= Coolie.state.finished
-}
+const Schedule = require("./Schedule")
+
 
 class Coolie {
 	constructor(setting) {
@@ -11,32 +9,37 @@ class Coolie {
 		this.type = setting.type
 		this.job = setting.job
 	}
-	static run (coolie){
-		Coolie.cooliePool.push(coolie)
+	static schedule(task, schedule) {
+		Coolie.mapppp[schedule.name] = () => {
+			setTimeout(() => {
+				task()
+			}, schedule.duaration * 1000)
+		}
+	}
+	static run() {
 		Coolie.boost()
 	}
-	static boost (){
-		if(Coolie.isBoosted){
+	static boost() {
+		if (Coolie.isBoosted) {
 			return null
 		}
-		Coolie.isBoosted=true
+		Coolie.isBoosted = true
 		Coolie.timeout = setTimeout(() => {
-			Coolie.cooliePool.forEach(item => {
-				if(item.state===Coolie.state.finished){
+			for (let key in Coolie.mapppp){
+				let item = Coolie.mapppp[key]
+				if (item.state === Coolie.state.finished) {
 					return null
 				}
-				if (item.type === Coolie.type.instant) {
-					return instantHandler(item)
-				}
-			})
+				item()
+			}
 		}, 500)
 	}
-	static shutdown (){
+	static shutdown() {
 		clearTimeout(Coolie.timeout)
 	}
 }
-Coolie.cooliePool=[]
-Coolie.isBoosted=false
+Coolie.mapppp = {}
+Coolie.isBoosted = false
 Coolie.type = {
 	instant: 1,
 	timing: 2,
@@ -49,5 +52,5 @@ Coolie.state = {
 	begun: 3,
 	finished: 4
 }
-
+Coolie.Schedule = Schedule
 module.exports = Coolie

@@ -1,0 +1,60 @@
+category
+
+repeatable
+	once	settimeout
+	repeat	setinterval
+finity
+	count
+priority
+	default
+	set
+	how to ensure the order
+resume/retry
+	both need to be loged
+	how many times
+immediately
+	0
+	not 0
+dependency
+	especially for asyc tasks
+async
+	not supported right now
+
+
+mechanism
+	perform:
+		timeout: every task has it's own timeout
+		interval: 
+	remove:
+		timeout: automatically
+		interval: 
+
+
+life circle
+	add
+	run
+	cancel
+	fail
+	end
+	remove
+
+
+pool
+	array
+	list
+
+
+OOA
+    Machine
+    task-->Job-->pool
+    Schedule
+
+
+    let task = ()=>{console.log("do some tasks")}
+    schedule = new Schedule(task, {})
+    schedule = Schedule.make(task).delay("3s")
+    Machine.schedule(task)
+    Machine.run()
+
+    machine.schedule(task, Schedule.delay("3s"))
+    machine.run()
