@@ -16,6 +16,10 @@
     "url": "https://github.com/zzzgit/coolie/issues"
   },
   "homepage": "https://github.com/zzzgit/coolie#readme",
+  "engines": {
+    "node": ">10.9.0",
+    "npm": ">5.5.0"
+  },
   "dependencies": {
     "eslint": "^5.5.0"
   }
