@@ -2,7 +2,7 @@
   "name": "coolie",
   "version": "1.0.0",
   "description": "a task scheduling tool written in javascript",
-  "main": "index.js",
+  "main": "built/main.js",
   "scripts": {
     "test": "node ./test.js"
   },
@@ -21,6 +21,7 @@
     "npm": ">5.5.0"
   },
   "dependencies": {
+    "delay": "^4.1.0",
     "eslint": "^5.5.0"
   }
 }
