@@ -1,27 +1,44 @@
 {
-  "name": "coolie",
-  "version": "1.0.0",
-  "description": "a task scheduling tool written in javascript",
-  "main": "built/main.js",
-  "scripts": {
-    "test": "node ./test.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/zzzgit/coolie.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/zzzgit/coolie/issues"
-  },
-  "homepage": "https://github.com/zzzgit/coolie#readme",
-  "engines": {
-    "node": ">10.9.0",
-    "npm": ">5.5.0"
-  },
-  "dependencies": {
-    "delay": "^5.0.0",
-    "eslint": "^8.9.0"
-  }
+	"name": "coolie",
+	"version": "1.0.0",
+	"description": "a task scheduling tool written in javascript",
+	"type": "commonjs",
+	"main": "built/main.js",
+	"scripts": {
+		"test": "node ./test.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/zzzgit/coolie.git"
+	},
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/zzzgit/coolie/issues"
+	},
+	"homepage": "https://github.com/zzzgit/coolie#readme",
+	"engines": {
+		"node": ">10.9.0",
+		"npm": ">5.5.0"
+	},
+	"dependencies": {
+		"delay": "^5.0.0",
+		"eventemitter3": "^4.0.7",
+		"kaze": "^0.0.62"
+	},
+	"devDependencies": {
+		"@typescript-eslint/eslint-plugin": "^5.13.0",
+		"@typescript-eslint/parser": "^5.13.0",
+		"cross-env": "^7.0.3",
+		"eslint": "^8.10.0",
+		"eslint-config-google": "^0.14.0",
+		"eslint-config-janus": "^1.1.22",
+		"eslint-plugin-array-func": "^3.1.7",
+		"eslint-plugin-jest": "^26.1.1",
+		"eslint-plugin-node": "^11.1.0",
+		"eslint-plugin-promise": "^6.0.0",
+		"eslint-plugin-security": "^1.4.0",
+		"eslint-plugin-unicorn": "^41.0.0",
+		"typescript": "^4.6.2"
+	}
 }

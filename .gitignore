@@ -1,3 +1,11 @@
+.DS_Store
 node_modules/
-index.js
-/built
+npm-debug.log
+dist/
+built/
+/.idea
+coverage/
+.nyc_output/
+/reports
+selenium-debug.log
+.rts2_cache

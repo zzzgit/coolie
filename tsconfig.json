@@ -1,12 +1,33 @@
 {
-    "compilerOptions": {
-        "target": "ES2016",
-        "module": "CommonJS",
-        "rootDir": "src",
-        "outDir": "built",
-        "sourceMap": false,
-        "moduleResolution": "node",
-        "watch": true,
-        "preserveWatchOutput": true
-    }
+	"compilerOptions": {
+		"target": "ESNext",
+		"module": "commonjs",	 
+		"lib": ["esnext","DOM"],
+		"sourceMap": true,
+		"moduleResolution": "Node",
+		"strictNullChecks": true,
+		"removeComments": true,
+		"allowJs": true,
+		"declaration": true,
+		"outDir": "./built/lib/",
+		"declarationDir": "./built/t/",
+		"resolveJsonModule": true,
+		"declarationMap": false,
+		"preserveWatchOutput": true,
+		"alwaysStrict": true,
+		"diagnostics": true,
+		"strict": true,
+		"noImplicitAny": true,
+		"noUnusedParameters": true,
+		"noUnusedLocals": true,
+		"noImplicitThis": true,
+		"listFiles": true,
+		"pretty": false,
+		"noEmitOnError": true,
+		"forceConsistentCasingInFileNames": true,
+		"noImplicitReturns": true,
+		"allowSyntheticDefaultImports": true
+	},
+	"exclude": ["node_modules"],
+	"include": ["src/**/*", "rollup.config.js", "commitlint.config.js", "jest.config.js"]
 }
