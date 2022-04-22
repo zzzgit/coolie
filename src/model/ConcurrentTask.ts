@@ -22,7 +22,7 @@ class ConcurrentTask implements ITask {
 	}
 
 	execute(): Promise<any> {
-		const task_arr = []
+		const task_arr: ITask[] = []
 		const threads_int = this._threads
 		for (let i = 0; i < threads_int; i++) {
 			const task = new InnerTask(this._gen)

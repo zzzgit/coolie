@@ -1,13 +1,14 @@
 
 import retry from "./function/retry"
 import series from "./function/series"
+import ISubscribable from "./model/ISubscribable"
 import Task from "./model/Task"
 
-const func = (init:number):Promise<number>=>{
+const func = (that: ISubscribable, init:number):Promise<number>=>{
 	console.log(2 + init)
 	return Promise.resolve(init + 2)
 }
-const func2 = async (init: number):Promise<number>=>{
+const func2 = async (that: ISubscribable, init: number):Promise<number>=>{
 	console.log(4 + init)
 	return 4 + init
 }
@@ -21,7 +22,7 @@ ser.execute(1).then(result =>console.log(result))
 
 
 let al = 0
-const kkkkkkk = (init: number): Promise<number> => {
+const kkkkkkk = (that: ISubscribable, init: number): Promise<number> => {
 	al = al + init
 	console.log("step:", al)
 	if (al > 10) {

@@ -1,6 +1,6 @@
-import EventEmitter from "eventemitter3"
+import ISubscribable from "../model/ISubscribable"
 
 /* eslint-disable @typescript-eslint/no-type-alias */
-type AsyncFunc = (init: any, emitter: EventEmitter<string | symbol, any>) => Promise<any>
+type AsyncFunc = (that: ISubscribable, init: any) => Promise<any>
 
 export default AsyncFunc

@@ -1,14 +1,15 @@
-import EventEmitter from "eventemitter3"
+import ISubscribable from "../model/ISubscribable"
 import ITask from "../model/ITask"
 import Task from "../model/Task"
+import AsyncFunc from "../type/AsyncFunc"
 import rejectInTime from "../util/rejectInTime"
 
 
 const inTime = (task: ITask, milliSecond: number): Task=>{
 	let timeout = rejectInTime(milliSecond)
-	const func = (init: any, emitter: EventEmitter): Promise<any> =>{
+	const func:AsyncFunc = function(that: ISubscribable, init: any): Promise<any> {
 		timeout = timeout.catch((e) => {
-			emitter.emit(`timeout`)
+			that.emit(`timeout`)
 			throw e
 		})
 		return Promise.race([timeout, task.execute(init)])

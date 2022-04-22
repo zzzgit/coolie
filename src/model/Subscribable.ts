@@ -18,9 +18,9 @@ class Subscribable implements ISubscribable {
 		return this.emitter.once(event, fn, context)
 	}
 
-	// emit<T>(event: T, ...args: any[]): boolean {
-	// 	return this.emitter.emit(event as unknown as (string | symbol), ...args)
-	// }
+	emit<T>(event: T, ...args: any[]): boolean {
+		return this.emitter.emit(event as unknown as (string | symbol), ...args)
+	}
 
 	eventNames(): (string | symbol)[] {
 		return this.emitter.eventNames()

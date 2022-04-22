@@ -9,6 +9,7 @@ class Coolie {
 		this.type = setting.type
 		this.job = setting.job
 	}
+
 	static schedule(task, schedule) {
 		Coolie.mapppp[schedule.name] = () => {
 			setTimeout(() => {
@@ -16,17 +17,19 @@ class Coolie {
 			}, schedule.duaration * 1000)
 		}
 	}
+
 	static run() {
 		Coolie.boost()
 	}
+
 	static boost() {
 		if (Coolie.isBoosted) {
 			return null
 		}
 		Coolie.isBoosted = true
 		Coolie.timeout = setTimeout(() => {
-			for (let key in Coolie.mapppp){
-				let item = Coolie.mapppp[key]
+			for (const key in Coolie.mapppp) {
+				const item = Coolie.mapppp[key]
 				if (item.state === Coolie.state.finished) {
 					return null
 				}
@@ -34,6 +37,7 @@ class Coolie {
 			}
 		}, 500)
 	}
+
 	static shutdown() {
 		clearTimeout(Coolie.timeout)
 	}
@@ -44,13 +48,13 @@ Coolie.type = {
 	instant: 1,
 	timing: 2,
 	internal: 3,
-	manual: 4
+	manual: 4,
 }
 Coolie.state = {
 	inited: 1,
 	putInQuee: 2,
 	begun: 3,
-	finished: 4
+	finished: 4,
 }
 Coolie.Schedule = Schedule
 module.exports = Coolie

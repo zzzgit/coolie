@@ -1,14 +1,15 @@
-import EventEmitter from "eventemitter3"
+import ISubscribable from "../model/ISubscribable"
 import ITask from "../model/ITask"
 import Task from "../model/Task"
+import AsyncFunc from "../type/AsyncFunc"
 
 
 const retry = (task: ITask, times: number): Task=>{
-	const func = (init: any, emitter: EventEmitter): Promise<any>=> {
+	const func:AsyncFunc = function(that: ISubscribable, init: any): Promise<any> {
 		let current = task.execute(init)
 		for (let i = 1; i < times; i++) { // 從1開始
 			current = current.catch(() => {
-				emitter.emit(`retry`, i)
+				that.emit(`retry`, i)
 				return task.execute(init)
 			})
 		}

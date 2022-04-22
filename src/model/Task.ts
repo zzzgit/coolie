@@ -12,7 +12,7 @@ class Task extends Subscribable implements ITask {
 	}
 
 	execute(param : any): Promise<any> {
-		return this._executor(param, this.getEmitter())
+		return this._executor(this, param)
 	}
 }
 
