@@ -24,7 +24,7 @@ ser.execute(1).then(result =>console.log(result))
 let al = 0
 const kkkkkkk = (that: ISubscribable, init: number): Promise<number> => {
 	al = al + init
-	console.log("ste2p:", al)
+	console.log("step:", al)
 	if (al > 10) {
 		return Promise.resolve(al + 2)
 	}
