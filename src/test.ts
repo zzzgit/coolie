@@ -28,7 +28,7 @@ const kkkkkkk = (that: ISubscribable, init: number): Promise<number> => {
 	if (al > 10) {
 		return Promise.resolve(al + 2)
 	}
-	return Promise.reject(new Error("er22ror:" + al))
+	return Promise.reject(new Error("error:" + al))
 }
 
 const t = new Task(kkkkkkk)
