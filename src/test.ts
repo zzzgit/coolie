@@ -22,7 +22,7 @@ ser.execute(1).then(result =>console.log(result))
 
 
 let al = 0
-const kkkkkkk = (that: ISubscribable, init: number): Promise<number> => {
+const bbbbbbbb = (that: ISubscribable, init: number): Promise<number> => {
 	al = al + init
 	console.log("step:", al)
 	if (al > 10) {
@@ -31,7 +31,7 @@ const kkkkkkk = (that: ISubscribable, init: number): Promise<number> => {
 	return Promise.reject(new Error("error:" + al))
 }
 
-const t = new Task(kkkkkkk)
+const t = new Task(bbbbbbbb)
 
 const realTask = retry(t, 12)
 realTask.on("retry", time=>console.log(2, time))
