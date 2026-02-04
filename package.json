@@ -22,6 +22,6 @@
   },
   "dependencies": {
     "delay": "^5.0.0",
-    "eslint": "^9.26.0"
+    "eslint": "^9.39.2"
   }
 }
